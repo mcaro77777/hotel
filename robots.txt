@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+# Reemplazar el dominio cuando se asigne en EasyPanel.

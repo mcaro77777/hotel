@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rapa Nui — Guía de Viaje | [Nombre de tu sitio]</title>
+<meta name="description" content="Guía de viaje a Rapa Nui (Isla de Pascua): tours, alojamiento, cultura y todo lo que necesitas para planificar tu visita.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --obsidian:#1B1A17;      /* negro volcánico, base oscura */
+    --stone:#EFE9DE;         /* piedra clara / fondo principal */
+    --pacific:#1F6F63;       /* verde-azulado del Pacífico */
+    --scoria:#C1502E;        /* rojo piedra scoria (pukao) — acento único */
+    --sand:#D9C9A3;          /* arena, para líneas y detalles */
+    --ink-soft:#4A463F;      /* texto secundario sobre stone */
+    --white:#FBF9F4;
+    --radius: 2px;
+    --maxw: 1180px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--stone);
+    color:var(--obsidian);
+    font-family:'Inter', sans-serif;
+    font-size:16px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  h1,h2,h3,h4{
+    font-family:'Fraunces', serif;
+    margin:0;
+    font-weight:600;
+    letter-spacing:-0.01em;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+  .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);}
+
+  /* Foco visible para accesibilidad */
+  a:focus-visible, button:focus-visible, input:focus-visible{
+    outline:2px solid var(--scoria);
+    outline-offset:3px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important; transition:none !important;}
+  }
+
+  /* ============ HEADER ============ */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:var(--stone);
+    border-bottom:1px solid rgba(27,26,23,0.1);
+  }
+  .nav-row{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 28px;
+    max-width:var(--maxw); margin:0 auto;
+  }
+  .logo{
+    font-family:'Fraunces', serif;
+    font-size:1.35rem;
+    font-weight:600;
+    display:flex; align-items:center; gap:10px;
+  }
+  .logo svg{width:26px;height:26px;flex-shrink:0;}
+  nav.primary-nav{display:flex; gap:34px;}
+  nav.primary-nav a{
+    font-size:0.95rem; font-weight:500; color:var(--ink-soft);
+    padding:6px 0; border-bottom:1px solid transparent;
+    transition:border-color .15s ease, color .15s ease;
+  }
+  nav.primary-nav a:hover{color:var(--obsidian); border-color:var(--scoria);}
+  .nav-cta{
+    background:var(--obsidian); color:var(--white);
+    padding:10px 20px; font-size:0.9rem; font-weight:500;
+    border-radius:var(--radius);
+  }
+  .nav-cta:hover{background:var(--scoria);}
+  .menu-toggle{display:none; background:none; border:none; cursor:pointer; padding:6px;}
+  .menu-toggle span{display:block; width:22px; height:2px; background:var(--obsidian); margin:5px 0;}
+
+  @media (max-width:860px){
+    nav.primary-nav{
+      position:absolute; top:100%; left:0; right:0;
+      background:var(--stone); flex-direction:column; gap:0;
+      max-height:0; overflow:hidden; border-bottom:1px solid rgba(27,26,23,0.1);
+      transition:max-height .25s ease;
+    }
+    nav.primary-nav.open{max-height:420px;}
+    nav.primary-nav a{padding:14px 28px; border-bottom:1px solid rgba(27,26,23,0.06);}
+    .nav-cta{display:none;}
+    .menu-toggle{display:block;}
+  }
+
+  /* ============ HERO ============ */
+  .hero{
+    position:relative;
+    min-height:86vh;
+    display:flex; align-items:flex-end;
+    background: linear-gradient(180deg, rgba(27,26,23,0.15) 0%, rgba(27,26,23,0.75) 100%),
+                var(--obsidian) url('REEMPLAZAR-CON-TU-FOTO-HERO.jpg') center/cover no-repeat;
+    padding-bottom:64px;
+  }
+  .hero .wrap{width:100%;}
+  .hero-eyebrow{
+    color:var(--sand); font-size:0.95rem; font-weight:500;
+    margin-bottom:14px;
+  }
+  .hero h1{
+    color:var(--white);
+    font-size:clamp(2.6rem, 6vw, 5.2rem);
+    line-height:0.98;
+    max-width:14ch;
+  }
+  .hero-sub{
+    color:var(--white); opacity:0.85;
+    max-width:44ch; margin-top:22px; font-size:1.08rem;
+  }
+  .hero-actions{display:flex; gap:16px; margin-top:36px; flex-wrap:wrap;}
+  .btn{
+    display:inline-block; padding:14px 28px;
+    font-size:0.95rem; font-weight:500; border-radius:var(--radius);
+    transition:transform .15s ease, background .15s ease;
+  }
+  .btn-primary{background:var(--scoria); color:var(--white);}
+  .btn-primary:hover{background:#a8431f;}
+  .btn-ghost{border:1px solid rgba(251,249,244,0.5); color:var(--white);}
+  .btn-ghost:hover{background:rgba(251,249,244,0.1);}
+
+  /* ============ SECTION SHELL ============ */
+  section{padding:96px 0;}
+  .section-head{
+    display:flex; justify-content:space-between; align-items:flex-end;
+    gap:24px; margin-bottom:48px; flex-wrap:wrap;
+  }
+  .section-head h2{font-size:clamp(1.9rem,3.4vw,2.6rem);}
+  .section-head p{color:var(--ink-soft); max-width:46ch; margin-top:10px;}
+  .section-link{
+    font-weight:500; font-size:0.95rem; white-space:nowrap;
+    border-bottom:1px solid var(--obsidian); padding-bottom:2px;
+  }
+
+  /* ============ ALOJAMIENTO — scroll horizontal ============ */
+  .stay-scroll{
+    display:flex; gap:22px; overflow-x:auto; padding-bottom:10px;
+    scroll-snap-type:x mandatory;
+  }
+  .stay-scroll::-webkit-scrollbar{height:6px;}
+  .stay-scroll::-webkit-scrollbar-thumb{background:var(--sand);}
+  .stay-card{
+    flex:0 0 300px; scroll-snap-align:start;
+    background:var(--white); border:1px solid rgba(27,26,23,0.08);
+  }
+  .stay-card .img{
+    height:210px; background:var(--sand) url('REEMPLAZAR-FOTO-ALOJAMIENTO-1.jpg') center/cover;
+    position:relative;
+  }
+  .stay-tag{
+    position:absolute; top:14px; left:14px;
+    background:var(--obsidian); color:var(--white);
+    font-size:0.72rem; font-weight:500; padding:5px 10px;
+    text-transform:uppercase; letter-spacing:0.04em;
+  }
+  .stay-body{padding:20px;}
+  .stay-body h3{font-size:1.15rem; margin-bottom:6px;}
+  .stay-meta{color:var(--ink-soft); font-size:0.88rem; margin-bottom:14px;}
+  .stay-price{
+    display:flex; justify-content:space-between; align-items:baseline;
+    border-top:1px solid rgba(27,26,23,0.08); padding-top:14px;
+  }
+  .stay-price .amount{font-family:'Fraunces',serif; font-size:1.3rem; font-weight:600;}
+  .stay-price .unit{color:var(--ink-soft); font-size:0.8rem;}
+
+  /* ============ QUÉ HACER — mosaico irregular ============ */
+  .mosaic{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    grid-auto-rows:120px;
+    gap:14px;
+  }
+  .mosaic a{
+    position:relative; overflow:hidden;
+    background:var(--pacific) url('REEMPLAZAR-FOTO-ACTIVIDAD.jpg') center/cover;
+    display:flex; align-items:flex-end; padding:20px;
+  }
+  .mosaic a::after{
+    content:''; position:absolute; inset:0;
+    background:linear-gradient(180deg, transparent 40%, rgba(27,26,23,0.75) 100%);
+  }
+  .mosaic span{position:relative; z-index:1; color:var(--white); font-family:'Fraunces',serif; font-size:1.15rem;}
+  .m-a{grid-column:span 3; grid-row:span 3;}
+  .m-b{grid-column:span 3; grid-row:span 2;}
+  .m-c{grid-column:span 2; grid-row:span 2;}
+  .m-d{grid-column:span 2; grid-row:span 2;}
+  .m-e{grid-column:span 2; grid-row:span 2;}
+  .m-f{grid-column:span 3; grid-row:span 2;}
+
+  @media (max-width:760px){
+    .mosaic{grid-template-columns:repeat(2,1fr); grid-auto-rows:150px;}
+    .m-a,.m-b,.m-c,.m-d,.m-e,.m-f{grid-column:span 1; grid-row:span 2;}
+  }
+
+  /* ============ CULTURA — franja oscura ============ */
+  .culture{
+    background:var(--obsidian); color:var(--white);
+  }
+  .culture .section-head p{color:rgba(251,249,244,0.7);}
+  .culture .section-head h2{color:var(--white);}
+  .culture-grid{
+    display:grid; grid-template-columns:1.1fr 0.9fr; gap:56px; align-items:center;
+  }
+  .culture-img{
+    height:460px;
+    background:var(--sand) url('REEMPLAZAR-FOTO-CULTURA.jpg') center/cover;
+  }
+  .culture-list{display:flex; flex-direction:column; gap:0;}
+  .culture-item{
+    padding:22px 0; border-top:1px solid rgba(251,249,244,0.15);
+  }
+  .culture-item:last-child{border-bottom:1px solid rgba(251,249,244,0.15);}
+  .culture-item h3{font-size:1.2rem; margin-bottom:6px;}
+  .culture-item p{color:rgba(251,249,244,0.65); font-size:0.95rem; max-width:48ch;}
+
+  @media (max-width:800px){
+    .culture-grid{grid-template-columns:1fr;}
+    .culture-img{height:300px;}
+  }
+
+  /* ============ NEWSLETTER ============ */
+  .newsletter{
+    background:var(--pacific); color:var(--white);
+    text-align:center;
+  }
+  .newsletter h2{color:var(--white); font-size:clamp(1.8rem,3.5vw,2.4rem); max-width:20ch; margin:0 auto 14px;}
+  .newsletter p{color:rgba(251,249,244,0.8); max-width:44ch; margin:0 auto 32px;}
+  .newsletter-form{
+    display:flex; gap:10px; max-width:440px; margin:0 auto; flex-wrap:wrap; justify-content:center;
+  }
+  .newsletter-form input{
+    flex:1; min-width:220px; padding:14px 16px;
+    border:none; font-size:0.95rem; background:var(--white); color:var(--obsidian);
+  }
+  .newsletter-form button{
+    background:var(--obsidian); color:var(--white); border:none;
+    padding:14px 26px; font-size:0.95rem; font-weight:500; cursor:pointer;
+  }
+  .newsletter-form button:hover{background:var(--scoria);}
+  .newsletter-note{font-size:0.8rem; color:rgba(251,249,244,0.6); margin-top:14px;}
+
+  /* ============ FOOTER ============ */
+  footer{background:var(--stone); padding:64px 0 32px; border-top:1px solid rgba(27,26,23,0.1);}
+  .footer-grid{
+    display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px;
+    margin-bottom:48px;
+  }
+  .footer-col h4{font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:18px; color:var(--ink-soft); font-family:'Inter',sans-serif; font-weight:600;}
+  .footer-col a{display:block; padding:6px 0; color:var(--obsidian); font-size:0.92rem;}
+  .footer-col a:hover{color:var(--scoria);}
+  .footer-brand p{color:var(--ink-soft); margin-top:12px; max-width:32ch; font-size:0.92rem;}
+  .footer-bottom{
+    display:flex; justify-content:space-between; align-items:center;
+    border-top:1px solid rgba(27,26,23,0.1); padding-top:24px;
+    font-size:0.85rem; color:var(--ink-soft); flex-wrap:wrap; gap:12px;
+  }
+  .socials{display:flex; gap:16px;}
+
+  @media (max-width:760px){
+    .footer-grid{grid-template-columns:1fr 1fr;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header>
+  <div class="nav-row">
+    <a href="#" class="logo">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M12 2C9 6 8 9 8 12.5C8 17 10 20 12 22C14 20 16 17 16 12.5C16 9 15 6 12 2Z" stroke="#C1502E" stroke-width="1.6"/>
+      </svg>
+      [Nombre del sitio]
+    </a>
+    <nav class="primary-nav" id="primaryNav">
+      <a href="#cultura">Rapa Nui</a>
+      <a href="#hacer">Qué hacer</a>
+      <a href="#alojamiento">Dónde dormir</a>
+      <a href="#planificar">Planifica tu viaje</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a href="#planificar" class="nav-cta">Planifica tu viaje</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="primaryNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<!-- Reemplaza la imagen de fondo en .hero (CSS) por una foto propia en alta resolución (1920x1080 o más) -->
+<section class="hero">
+  <div class="wrap">
+    <p class="hero-eyebrow">Iorana — bienvenido a</p>
+    <h1>Rapa Nui, el corazón del Pacífico</h1>
+    <p class="hero-sub">[Texto de bienvenida: una o dos frases sobre lo que ofrece tu guía — tours, alojamiento, cultura, planificación del viaje.]</p>
+    <div class="hero-actions">
+      <a href="#planificar" class="btn btn-primary">Planifica tu viaje</a>
+      <a href="#hacer" class="btn btn-ghost">Ver actividades</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DÓNDE DORMIR ============ -->
+<section id="alojamiento">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <h2>Dónde dormir</h2>
+        <p>[Descripción breve de la sección de alojamiento: hoteles, cabañas, hostales.]</p>
+      </div>
+      <a href="#" class="section-link">Ver todo el alojamiento →</a>
+    </div>
+
+    <div class="stay-scroll">
+      <!-- Repite este bloque .stay-card por cada alojamiento -->
+      <article class="stay-card">
+        <div class="img">
+          <span class="stay-tag">[Categoría]</span>
+        </div>
+        <div class="stay-body">
+          <h3>[Nombre del alojamiento]</h3>
+          <p class="stay-meta">[Ubicación breve o característica destacada]</p>
+          <div class="stay-price">
+            <div>
+              <span class="amount">$[precio]</span>
+            </div>
+            <span class="unit">CLP / noche</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="stay-card">
+        <div class="img"><span class="stay-tag">[Categoría]</span></div>
+        <div class="stay-body">
+          <h3>[Nombre del alojamiento]</h3>
+          <p class="stay-meta">[Ubicación breve]</p>
+          <div class="stay-price"><div><span class="amount">$[precio]</span></div><span class="unit">CLP / noche</span></div>
+        </div>
+      </article>
+
+      <article class="stay-card">
+        <div class="img"><span class="stay-tag">[Categoría]</span></div>
+        <div class="stay-body">
+          <h3>[Nombre del alojamiento]</h3>
+          <p class="stay-meta">[Ubicación breve]</p>
+          <div class="stay-price"><div><span class="amount">$[precio]</span></div><span class="unit">CLP / noche</span></div>
+        </div>
+      </article>
+
+      <article class="stay-card">
+        <div class="img"><span class="stay-tag">[Categoría]</span></div>
+        <div class="stay-body">
+          <h3>[Nombre del alojamiento]</h3>
+          <p class="stay-meta">[Ubicación breve]</p>
+          <div class="stay-price"><div><span class="amount">$[precio]</span></div><span class="unit">CLP / noche</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ QUÉ HACER — mosaico ============ -->
+<section id="hacer">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <h2>Qué hacer en la isla</h2>
+        <p>[Introducción breve a las actividades disponibles: sitios arqueológicos, playas, senderismo, buceo, etc.]</p>
+      </div>
+      <a href="#" class="section-link">Ver todas las actividades →</a>
+    </div>
+
+    <div class="mosaic">
+      <a href="#" class="m-a"><span>[Sitios arqueológicos]</span></a>
+      <a href="#" class="m-b"><span>[Trekking y volcanes]</span></a>
+      <a href="#" class="m-c"><span>[Playas]</span></a>
+      <a href="#" class="m-d"><span>[Buceo y snorkel]</span></a>
+      <a href="#" class="m-e"><span>[Cabalgatas]</span></a>
+      <a href="#" class="m-f"><span>[Experiencias culturales]</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CULTURA — franja oscura ============ -->
+<section class="culture" id="cultura">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <h2>Cultura Rapa Nui</h2>
+        <p>[Introducción breve a la cultura, historia y tradiciones del pueblo Rapa Nui.]</p>
+      </div>
+    </div>
+
+    <div class="culture-grid">
+      <div class="culture-img"></div>
+      <div class="culture-list">
+        <div class="culture-item">
+          <h3>[Moai]</h3>
+          <p>[Breve descripción del tema cultural.]</p>
+        </div>
+        <div class="culture-item">
+          <h3>[Tapati Rapa Nui]</h3>
+          <p>[Breve descripción del tema cultural.]</p>
+        </div>
+        <div class="culture-item">
+          <h3>[Lengua Rapa Nui]</h3>
+          <p>[Breve descripción del tema cultural.]</p>
+        </div>
+        <div class="culture-item">
+          <h3>[Mitos y leyendas]</h3>
+          <p>[Breve descripción del tema cultural.]</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NEWSLETTER ============ -->
+<section class="newsletter">
+  <div class="wrap">
+    <h2>Recibe consejos de viaje directo a tu correo</h2>
+    <p>[Frase corta invitando a suscribirse — ofertas, guías, novedades de la isla.]</p>
+    <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Formulario de ejemplo — conectar a tu proveedor de email.');">
+      <label class="visually-hidden" for="newsletter-email">Correo electrónico</label>
+      <input type="email" id="newsletter-email" placeholder="tu@correo.com" required>
+      <button type="submit">Suscribirme</button>
+    </form>
+    <p class="newsletter-note">[Enlace a política de privacidad y términos]</p>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer id="contacto">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <h4>[Nombre del sitio]</h4>
+        <p>[Descripción breve del sitio — quiénes son, qué ofrecen a los viajeros que visitan Rapa Nui.]</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explorar</h4>
+        <a href="#cultura">Rapa Nui</a>
+        <a href="#hacer">Qué hacer</a>
+        <a href="#alojamiento">Dónde dormir</a>
+        <a href="#planificar">Planifica tu viaje</a>
+      </div>
+      <div class="footer-col">
+        <h4>Ayuda</h4>
+        <a href="#">Sobre nosotros</a>
+        <a href="#">Contacto</a>
+        <a href="#">Preguntas frecuentes</a>
+        <a href="#">Blog</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <a href="mailto:contacto@tudominio.com">contacto@tudominio.com</a>
+        <div class="socials" style="margin-top:10px;">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Facebook">FB</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© [Año] [Nombre del sitio]. Todos los derechos reservados.</span>
+      <span><a href="#">Política de privacidad</a> · <a href="#">Términos y condiciones</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('menuToggle');
+  const nav = document.getElementById('primaryNav');
+  toggle.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', isOpen);
+  });
+</script>
+
+</body>
+</html>

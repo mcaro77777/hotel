@@ -5,8 +5,12 @@
   const menuButton = document.querySelector(".menu-toggle");
   const navigation = document.querySelector(".main-nav");
   const year = document.querySelector("#year");
-  const planner = document.querySelector("#planner-form");
-  const planResult = document.querySelector("#plan-result");
+  const bookingForm = document.querySelector("#booking-form");
+  const bookingResult = document.querySelector("#booking-result");
+  const occupancyToggle = document.querySelector("#occupancy-toggle");
+  const occupancyPanel = document.querySelector("#occupancy-panel");
+  const occupancyDone = document.querySelector("#occupancy-done");
+  const occupancySummary = document.querySelector("#occupancy-summary");
   const newsletter = document.querySelector("#newsletter-form");
   const newsletterStatus = document.querySelector("#newsletter-status");
 
@@ -52,15 +56,84 @@
     sections.forEach(function (section) { observer.observe(section); });
   }
 
-  if (planner && planResult) {
-    planner.addEventListener("submit", function (event) {
+  const guests = { adults: 2, children: 0, rooms: 1 };
+  const guestLimits = { adults: [1, 12], children: [0, 10], rooms: [1, 8] };
+
+  function updateOccupancy() {
+    if (!occupancySummary) return;
+    occupancySummary.textContent = guests.adults + (guests.adults === 1 ? " adulto" : " adultos") + " · " + guests.children + (guests.children === 1 ? " niño" : " niños") + " · " + guests.rooms + (guests.rooms === 1 ? " habitación" : " habitaciones");
+    Object.keys(guests).forEach(function (key) {
+      const output = document.querySelector("#" + key + "-count");
+      if (output) output.textContent = String(guests[key]);
+    });
+  }
+
+  function closeOccupancy() {
+    if (!occupancyToggle || !occupancyPanel) return;
+    occupancyPanel.hidden = true;
+    occupancyToggle.setAttribute("aria-expanded", "false");
+  }
+
+  function showBookingResult(title, message) {
+    if (!bookingResult) return;
+    const heading = document.createElement("strong");
+    heading.textContent = title;
+    bookingResult.replaceChildren(heading, document.createTextNode(message));
+    bookingResult.hidden = false;
+  }
+
+  if (occupancyToggle && occupancyPanel) {
+    occupancyToggle.addEventListener("click", function () {
+      const opening = occupancyPanel.hidden;
+      occupancyPanel.hidden = !opening;
+      occupancyToggle.setAttribute("aria-expanded", String(opening));
+    });
+    occupancyPanel.querySelectorAll("[data-counter]").forEach(function (button) {
+      button.addEventListener("click", function () {
+        const key = button.dataset.counter;
+        const limits = guestLimits[key];
+        guests[key] = Math.min(limits[1], Math.max(limits[0], guests[key] + Number(button.dataset.step)));
+        updateOccupancy();
+      });
+    });
+    if (occupancyDone) occupancyDone.addEventListener("click", closeOccupancy);
+    document.addEventListener("click", function (event) {
+      if (!occupancyPanel.hidden && !event.target.closest(".occupancy-field")) closeOccupancy();
+    });
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && !occupancyPanel.hidden) closeOccupancy();
+    });
+  }
+
+  if (bookingForm && bookingResult) {
+    const today = new Date();
+    const tomorrow = new Date(today);
+    tomorrow.setDate(today.getDate() + 1);
+    const checkIn = bookingForm.querySelector("#check-in");
+    const checkOut = bookingForm.querySelector("#check-out");
+    const toInputDate = function (date) { return date.toISOString().split("T")[0]; };
+    checkIn.min = toInputDate(today);
+    checkOut.min = toInputDate(tomorrow);
+    checkIn.addEventListener("change", function () {
+      if (!checkIn.value) return;
+      const nextDay = new Date(checkIn.value + "T12:00:00");
+      nextDay.setDate(nextDay.getDate() + 1);
+      checkOut.min = toInputDate(nextDay);
+      if (checkOut.value && checkOut.value <= checkIn.value) checkOut.value = "";
+    });
+
+    bookingForm.addEventListener("submit", function (event) {
       event.preventDefault();
-      const data = new FormData(planner);
-      const days = Number(data.get("days"));
-      const pace = days <= 3 ? "una ruta esencial y pausada" : days <= 5 ? "una ruta equilibrada con tiempo para descansar" : "una ruta amplia para explorar sin prisa";
-      planResult.hidden = false;
-      planResult.innerHTML = "<strong>Tu punto de partida</strong>Para " + data.get("travelers") + " en " + data.get("month") + ", sugerimos " + pace + ", centrada en " + String(data.get("interest")).toLowerCase() + ". Esta propuesta es informativa y no genera una reserva.";
-      planResult.focus({ preventScroll: true });
+      const data = new FormData(bookingForm);
+      showBookingResult("Búsqueda preparada", data.get("destination") + ", del " + data.get("checkIn") + " al " + data.get("checkOut") + ", para " + occupancySummary.textContent + ". La disponibilidad y los precios aparecerán cuando se conecte el motor de reservas.");
+    });
+
+    document.querySelectorAll("[data-stay]").forEach(function (button) {
+      button.addEventListener("click", function () {
+        showBookingResult(button.dataset.stay, "Selecciona las fechas y los huéspedes para consultar este alojamiento cuando el motor de reservas esté conectado.");
+        bookingForm.scrollIntoView({ behavior: "smooth", block: "center" });
+        checkIn.focus({ preventScroll: true });
+      });
     });
   }
 

@@ -1,4 +1,4 @@
-# Iorana Rapa Nui
+# Aorangi Hare Rapa Nui
 
 Sitio turístico estático construido con HTML, CSS y JavaScript nativos. No necesita Node.js ni un proceso de compilación en producción.
 

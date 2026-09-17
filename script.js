@@ -11,8 +11,8 @@
   const occupancyPanel = document.querySelector("#occupancy-panel");
   const occupancyDone = document.querySelector("#occupancy-done");
   const occupancySummary = document.querySelector("#occupancy-summary");
-  const newsletter = document.querySelector("#newsletter-form");
-  const newsletterStatus = document.querySelector("#newsletter-status");
+  const contactForm = document.querySelector("#contact-form");
+  const contactStatus = document.querySelector("#contact-status");
 
   if (year) year.textContent = String(new Date().getFullYear());
 
@@ -137,10 +137,10 @@
     });
   }
 
-  if (newsletter && newsletterStatus) {
-    newsletter.addEventListener("submit", function (event) {
+  if (contactForm && contactStatus) {
+    contactForm.addEventListener("submit", function (event) {
       event.preventDefault();
-      newsletterStatus.textContent = "Gracias. La suscripción estará disponible cuando se conecte el servicio de correo; tus datos no fueron enviados.";
+      contactStatus.textContent = "La consulta está lista. El envío estará disponible cuando se conecte el formulario; tus datos no fueron enviados.";
     });
   }
 })();

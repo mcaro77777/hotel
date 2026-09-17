@@ -26,7 +26,7 @@
         <a href="#reserva">Reserva</a>
         <a class="nav-mobile-cta" href="#reserva">Buscar alojamiento</a>
       </nav>
-      <a class="nav-cta" href="#reserva">Reservar <span aria-hidden="true">↗</span></a>
+      <a class="nav-cta" href="#contacto">Contacto <span aria-hidden="true">↗</span></a>
       <button class="menu-toggle" type="button" aria-controls="main-nav" aria-expanded="false" aria-label="Abrir menú">
         <span></span><span></span>
       </button>
@@ -204,11 +204,31 @@
       </div>
     </section>
 
-    <section class="newsletter" id="contacto">
-      <div class="container newsletter-inner">
-        <div><p class="eyebrow light">Inspiración sin ruido</p><h2>Consejos para viajar mejor</h2><p>Recibe ideas breves sobre rutas, cultura y estadías en Rapa Nui.</p></div>
-        <form id="newsletter-form" class="newsletter-form"><label class="visually-hidden" for="email">Correo electrónico</label><input id="email" name="email" type="email" placeholder="tu@correo.cl" autocomplete="email" required><button type="submit" aria-label="Suscribirme">→</button></form>
-        <p class="newsletter-status" id="newsletter-status" role="status" aria-live="polite"></p>
+    <section class="contact section-pad" id="contacto" aria-labelledby="contact-title">
+      <div class="container contact-grid">
+        <div class="contact-intro">
+          <p class="eyebrow light">Estamos para ayudarte</p>
+          <h2 id="contact-title">Conversemos sobre tu estadía</h2>
+          <p>Cuéntanos tus fechas, cuántas personas viajan y qué necesitas. Te responderemos con la información necesaria para preparar tu visita a Rapa Nui.</p>
+          <div class="contact-details">
+            <div><span>Ubicación</span><strong>Hanga Roa · Rapa Nui</strong></div>
+            <div><span>Consultas</span><strong>Reservas y estadías</strong></div>
+          </div>
+        </div>
+        <form class="contact-form" id="contact-form">
+          <div class="contact-row">
+            <label for="contact-name">Nombre completo<input id="contact-name" name="name" type="text" autocomplete="name" placeholder="Tu nombre" required></label>
+            <label for="contact-email">Correo electrónico<input id="contact-email" name="email" type="email" autocomplete="email" placeholder="tu@correo.cl" required></label>
+          </div>
+          <div class="contact-row">
+            <label for="contact-phone">Teléfono<input id="contact-phone" name="phone" type="tel" autocomplete="tel" placeholder="+56 9 0000 0000"></label>
+            <label for="contact-subject">Motivo de contacto<select id="contact-subject" name="subject" required><option value="">Selecciona una opción</option><option>Consultar disponibilidad</option><option>Información sobre cabañas</option><option>Experiencias en la isla</option><option>Otra consulta</option></select></label>
+          </div>
+          <label for="contact-message">Mensaje<textarea id="contact-message" name="message" rows="5" placeholder="Cuéntanos las fechas de tu viaje y cómo podemos ayudarte" required></textarea></label>
+          <button class="contact-submit" type="submit">Enviar consulta <span aria-hidden="true">→</span></button>
+          <p class="contact-note">Formulario de demostración: todavía no envía información.</p>
+          <p class="contact-status" id="contact-status" role="status" aria-live="polite"></p>
+        </form>
       </div>
     </section>
   </main>
@@ -217,7 +237,7 @@
     <div class="container footer-grid">
       <div class="footer-brand"><a class="brand" href="#inicio"><span class="brand-mark" aria-hidden="true">AH</span><span>Aorangi Hare <em>Rapa Nui</em></span></a><p>Una guía para descubrir la isla con curiosidad, calma y respeto.</p></div>
       <div><h2>Explora</h2><a href="#alojamiento">Cabañas</a><a href="#experiencias">Experiencias</a><a href="#cultura">Cultura</a></div>
-      <div><h2>Reserva</h2><a href="#reserva">Buscar alojamiento</a><a href="#faq-title">Preguntas frecuentes</a><a href="mailto:hola@ioranarapanui.cl">Contacto</a></div>
+      <div><h2>Reserva</h2><a href="#reserva">Buscar alojamiento</a><a href="#faq-title">Preguntas frecuentes</a><a href="#contacto">Contacto</a></div>
       <div class="footer-note"><p>Hecho para mirar la isla de otra manera.</p><span>Rapa Nui · Chile</span></div>
     </div>
     <div class="container footer-bottom"><span>© <span id="year"></span> Aorangi Hare Rapa Nui</span><span>Sitio informativo · Primera versión</span></div>

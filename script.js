@@ -189,9 +189,14 @@
 
     document.querySelectorAll("[data-stay]").forEach(function (button) {
       button.addEventListener("click", function () {
-        accommodationSelect.value = button.dataset.stay;
-        bookingForm.scrollIntoView({ behavior: "smooth", block: "center" });
-        window.setTimeout(function () { accommodationSelect.focus({ preventScroll: true }); }, 450);
+        const card = button.closest(".stay-card");
+        const stayName = card ? card.querySelector("h3").textContent : "el alojamiento seleccionado";
+        const selectedStay = document.querySelector("#selected-stay");
+        if (selectedStay) {
+          selectedStay.textContent = "Consulta seleccionada: " + stayName + ". Incluye tus fechas y cantidad de huéspedes al contactar.";
+          selectedStay.hidden = false;
+        }
+        document.querySelector("#contacto").scrollIntoView({ behavior: "smooth", block: "start" });
       });
     });
   }

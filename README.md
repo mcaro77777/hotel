@@ -26,6 +26,6 @@ Luego abre `http://localhost:8080`.
 
 ## Alcance actual
 
-El planificador funciona localmente y crea una sugerencia orientativa. No envía datos, no consulta disponibilidad y no genera reservas. El formulario de newsletter también informa de forma explícita que el servicio de correo aún no está conectado.
+El buscador funciona localmente, valida la capacidad del alojamiento y prepara una consulta orientativa. No envía datos, no consulta disponibilidad en tiempo real y no genera reservas. El formulario de contacto también informa de forma explícita que el servicio de correo aún no está conectado.
 
-Las fotografías fueron generadas específicamente para este proyecto y se sirven desde `images/`, sin depender de proveedores externos.
+Las fotografías de las cabañas provienen del material entregado por Aorangi Hare y se sirven desde `images/`, sin depender de proveedores externos.

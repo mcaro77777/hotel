@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Cabañas Aorangi Hare en Rapa Nui: espacios acogedores y equipados para descansar y disfrutar la isla.">
+  <meta name="description" content="Cabañas y habitaciones Aorangi Hare en Hanga Roa, Rapa Nui. Conoce capacidades, camas, servicios y tarifas por noche.">
   <meta name="theme-color" content="#162b2b">
-  <title>Aorangi Hare Rapa Nui · Viaja con respeto, descubre con calma</title>
+  <title>Cabañas Aorangi Hare · Alojamiento en Rapa Nui</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preload" href="images/hero-rapa-nui.jpg" as="image" fetchpriority="high">
   <link rel="stylesheet" href="styles.css">
@@ -20,7 +20,7 @@
         <span>Aorangi Hare <em>Rapa Nui</em></span>
       </a>
       <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
-        <a href="#alojamiento">Cabañas</a>
+        <a href="#alojamiento">Alojamientos</a>
         <a href="#experiencias">Experiencias</a>
         <a href="#cultura">Cultura</a>
         <a href="#reserva">Reserva</a>
@@ -39,9 +39,9 @@
       <div class="container hero-content">
         <p class="eyebrow light">27°07′S · 109°22′O</p>
         <h1 id="hero-title">Una isla que se vive <em>sin prisa.</em></h1>
-        <p class="hero-copy">Cabañas acogedoras, experiencias y consejos esenciales para conocer Rapa Nui con respeto por su cultura y su territorio.</p>
+        <p class="hero-copy">Cabañas equipadas y habitaciones acogedoras en Hanga Roa para vivir Rapa Nui con calma, comodidad y respeto por la isla.</p>
         <div class="hero-actions">
-          <a class="button button-primary" href="#reserva">Buscar alojamiento</a>
+          <a class="button button-primary" href="#alojamiento">Ver alojamientos</a>
           <a class="button button-quiet" href="#experiencias">Explorar la isla <span aria-hidden="true">↓</span></a>
         </div>
       </div>
@@ -69,39 +69,113 @@
 
     <section class="stays section-pad" id="alojamiento" aria-labelledby="stays-title">
       <div class="container">
-        <div class="section-heading">
-          <div><p class="eyebrow">Tu espacio en Rapa Nui</p><h2 id="stays-title">Cabañas para descansar en la isla</h2></div>
-          <p>Espacios acogedores y equipados para viajar en pareja, con amigos o en familia. Conoce cada alternativa y elige la que mejor acompañe tu estadía.</p>
+        <div class="section-heading stays-heading">
+          <div><p class="eyebrow">Tu espacio en Rapa Nui</p><h2 id="stays-title">Elige cómo quieres descansar</h2></div>
+          <p>Cinco cabañas equipadas y dos alternativas de hostal, con tarifas claras para que compares antes de consultar disponibilidad.</p>
         </div>
-        <div class="stay-grid">
-          <article class="stay-card stay-card-featured">
-            <figure class="stay-image"><img src="images/cabaña1.jpg" alt="Dormitorio matrimonial de una cabaña en Rapa Nui"><figcaption>Descanso en pareja</figcaption></figure>
+
+        <div class="stay-toolbar" aria-label="Filtrar alojamientos">
+          <div class="stay-filters" role="group" aria-label="Tipo de alojamiento">
+            <button class="stay-filter active" type="button" data-filter="all" aria-pressed="true">Todos <span>7</span></button>
+            <button class="stay-filter" type="button" data-filter="cabana" aria-pressed="false">Cabañas <span>5</span></button>
+            <button class="stay-filter" type="button" data-filter="hostal" aria-pressed="false">Hostal <span>2</span></button>
+          </div>
+          <p>Tarifas referenciales en pesos chilenos por noche</p>
+        </div>
+
+        <div class="stay-catalog">
+          <article class="stay-card stay-card-wide" data-kind="cabana" data-capacity="4">
+            <figure class="stay-gallery" data-gallery data-images='["images/make-make-1.jpg","images/make-make-2.jpg","images/make-make-3.jpg","images/make-make-4.jpg","images/make-make-5.jpg"]' data-alts='["Comedor interior de la cabaña Make Make","Baño privado de la cabaña Make Make","Dormitorio familiar de la cabaña Make Make","Cocina equipada de la cabaña Make Make","Terraza exterior de la cabaña Make Make"]'>
+              <img src="images/make-make-1.jpg" alt="Comedor interior de la cabaña Make Make" loading="lazy">
+              <button class="gallery-arrow gallery-prev" type="button" aria-label="Foto anterior">←</button><button class="gallery-arrow gallery-next" type="button" aria-label="Foto siguiente">→</button>
+              <figcaption><span class="gallery-label">Make Make</span><span class="gallery-count">1 / 5</span></figcaption>
+            </figure>
             <div class="stay-content">
-              <p class="card-number">01 · Cabaña matrimonial</p>
-              <h3>Descanso Aorangi</h3>
-              <p>Un dormitorio amplio y acogedor para disfrutar la isla con calma y privacidad.</p>
-              <ul><li>Cama matrimonial</li><li>Baño privado</li><li>Ropa de cama</li></ul>
-              <a href="#reserva">Consultar disponibilidad <span aria-hidden="true">↗</span></a>
+              <div class="stay-card-top"><p class="card-number">01 · Cabaña</p><p class="stay-price"><strong>$140.000</strong><span>por noche</span></p></div>
+              <h3>Make Make</h3><p>Un ambiente amplio para familias o grupos pequeños, con cocina propia y terraza para disfrutar el ritmo de la isla.</p>
+              <div class="stay-facts"><span>Hasta 4 huéspedes</span><span>1 ambiente</span><span>1 baño</span></div>
+              <ul><li>1 cama matrimonial</li><li>2 camas de plaza y media</li><li>Cocina</li><li>Comedor</li><li>Terraza</li></ul>
+              <button class="stay-book" type="button" data-stay="make-make">Consultar Make Make <span aria-hidden="true">↗</span></button>
             </div>
           </article>
-          <article class="stay-card">
-            <figure class="stay-image"><img src="images/cabaña2.jpg" alt="Cocina equipada y luminosa de una cabaña en Rapa Nui"><figcaption>Todo a tu ritmo</figcaption></figure>
+
+          <article class="stay-card stay-card-wide" data-kind="cabana" data-capacity="4">
+            <figure class="stay-gallery" data-gallery data-images='["images/rei-miro-1.jpg","images/rei-miro-2.jpg","images/rei-miro-3.jpg","images/rei-miro-4.jpg","images/rei-miro-5.jpg"]' data-alts='["Comedor de la cabaña Rei Miro","Baño privado de la cabaña Rei Miro","Dormitorio con camas individuales de la cabaña Rei Miro","Cocina de la cabaña Rei Miro","Terraza y jardín de la cabaña Rei Miro"]'>
+              <img src="images/rei-miro-1.jpg" alt="Comedor de la cabaña Rei Miro" loading="lazy">
+              <button class="gallery-arrow gallery-prev" type="button" aria-label="Foto anterior">←</button><button class="gallery-arrow gallery-next" type="button" aria-label="Foto siguiente">→</button>
+              <figcaption><span class="gallery-label">Rei Miro</span><span class="gallery-count">1 / 5</span></figcaption>
+            </figure>
             <div class="stay-content">
-              <p class="card-number">02 · Cabaña equipada</p>
-              <h3>Comodidad en la isla</h3>
-              <p>Cocina propia y espacios funcionales para vivir cada día con mayor independencia.</p>
-              <ul><li>Cocina equipada</li><li>Comedor</li><li>Luz natural</li></ul>
-              <a href="#reserva">Consultar disponibilidad <span aria-hidden="true">↗</span></a>
+              <div class="stay-card-top"><p class="card-number">02 · Cabaña</p><p class="stay-price"><strong>$150.000</strong><span>por noche</span></p></div>
+              <h3>Rei Miro</h3><p>Dos habitaciones independientes para compartir la estadía con comodidad, además de cocina, comedor y terraza.</p>
+              <div class="stay-facts"><span>Hasta 4 huéspedes</span><span>2 habitaciones</span><span>1 baño</span></div>
+              <ul><li>1 cama matrimonial</li><li>2 camas de plaza y media</li><li>Cocina</li><li>Comedor</li><li>Terraza</li></ul>
+              <button class="stay-book" type="button" data-stay="rei-miro">Consultar Rei Miro <span aria-hidden="true">↗</span></button>
             </div>
           </article>
-          <article class="stay-card">
-            <figure class="stay-image"><img src="images/cabaña3.jpg" alt="Dormitorio con dos camas individuales en una cabaña de Rapa Nui"><figcaption>Para compartir</figcaption></figure>
+
+          <article class="stay-card" data-kind="cabana" data-capacity="5">
+            <figure class="stay-gallery" data-gallery data-images='["images/tangata-manu-1.jpg","images/tangata-manu-2.jpg","images/tangata-manu-3.jpg","images/tangata-manu-4.jpg","images/tangata-manu-5.jpg"]' data-alts='["Comedor de la cabaña Tangata Manu","Dormitorio de la cabaña Tangata Manu","Cocina de la cabaña Tangata Manu","Baño privado de la cabaña Tangata Manu","Terraza de la cabaña Tangata Manu"]'>
+              <img src="images/tangata-manu-1.jpg" alt="Comedor de la cabaña Tangata Manu" loading="lazy">
+              <button class="gallery-arrow gallery-prev" type="button" aria-label="Foto anterior">←</button><button class="gallery-arrow gallery-next" type="button" aria-label="Foto siguiente">→</button>
+              <figcaption><span class="gallery-label">Tangata Manu</span><span class="gallery-count">1 / 5</span></figcaption>
+            </figure>
             <div class="stay-content">
-              <p class="card-number">03 · Cabaña twin</p>
-              <h3>Viaje compartido</h3>
-              <p>Dos camas individuales y un ambiente tranquilo para amigos o familiares.</p>
-              <ul><li>Dos camas</li><li>Baño privado</li><li>Ropa de cama</li></ul>
-              <a href="#reserva">Consultar disponibilidad <span aria-hidden="true">↗</span></a>
+              <div class="stay-card-top"><p class="card-number">03 · Cabaña</p><p class="stay-price"><strong>$120.000</strong><span>por noche</span></p></div>
+              <h3>Tangata Manu</h3><p>Una alternativa funcional para grupos, con cinco camas y espacios equipados para una estadía independiente.</p>
+              <div class="stay-facts"><span>Hasta 5 huéspedes</span><span>1 ambiente</span><span>1 baño</span></div>
+              <ul><li>5 camas</li><li>Cocina</li><li>Comedor</li><li>Terraza</li></ul>
+              <button class="stay-book" type="button" data-stay="tangata-manu">Consultar Tangata Manu <span aria-hidden="true">↗</span></button>
+            </div>
+          </article>
+
+          <article class="stay-card" data-kind="cabana" data-capacity="5">
+            <figure class="stay-gallery" data-gallery data-images='["images/manu-piri-1.jpg","images/manu-piri-2.jpg","images/manu-piri-3.jpg","images/manu-piri-4.jpg","images/manu-piri-5.jpg"]' data-alts='["Dormitorio con camas individuales de la cabaña Manu Piri","Acceso y mobiliario de la cabaña Manu Piri","Baño privado de la cabaña Manu Piri","Cocina de la cabaña Manu Piri","Cama individual de la cabaña Manu Piri"]'>
+              <img src="images/manu-piri-1.jpg" alt="Dormitorio con camas individuales de la cabaña Manu Piri" loading="lazy">
+              <button class="gallery-arrow gallery-prev" type="button" aria-label="Foto anterior">←</button><button class="gallery-arrow gallery-next" type="button" aria-label="Foto siguiente">→</button>
+              <figcaption><span class="gallery-label">Manu Piri</span><span class="gallery-count">1 / 5</span></figcaption>
+            </figure>
+            <div class="stay-content">
+              <div class="stay-card-top"><p class="card-number">04 · Cabaña</p><p class="stay-price"><strong>$120.000</strong><span>por noche</span></p></div>
+              <h3>Manu Piri</h3><p>Un espacio sencillo y equipado para grupos de hasta cinco personas, con cocina y terraza propia.</p>
+              <div class="stay-facts"><span>Hasta 5 huéspedes</span><span>1 ambiente</span><span>1 baño</span></div>
+              <ul><li>5 camas</li><li>Cocina</li><li>Comedor</li><li>Terraza</li></ul>
+              <button class="stay-book" type="button" data-stay="manu-piri">Consultar Manu Piri <span aria-hidden="true">↗</span></button>
+            </div>
+          </article>
+
+          <article class="stay-card" data-kind="cabana" data-capacity="2">
+            <figure class="stay-gallery" data-gallery data-images='["images/cabana1.jpg","images/cabana2.jpg"]' data-alts='["Dormitorio matrimonial de la cabaña Tongariki","Cocina equipada de la cabaña Tongariki"]'>
+              <img src="images/cabana1.jpg" alt="Dormitorio matrimonial de la cabaña Tongariki" loading="lazy">
+              <button class="gallery-arrow gallery-prev" type="button" aria-label="Foto anterior">←</button><button class="gallery-arrow gallery-next" type="button" aria-label="Foto siguiente">→</button>
+              <figcaption><span class="gallery-label">Tongariki</span><span class="gallery-count">1 / 2</span></figcaption>
+            </figure>
+            <div class="stay-content">
+              <div class="stay-card-top"><p class="card-number">05 · Cabaña</p><p class="stay-price"><strong>$100.000</strong><span>por noche</span></p></div>
+              <h3>Tongariki</h3><p>Una cabaña íntima para dos personas, con cama matrimonial y cocina para disfrutar la isla a tu ritmo.</p>
+              <div class="stay-facts"><span>Hasta 2 huéspedes</span><span>1 ambiente</span><span>1 baño</span></div>
+              <ul><li>Cama matrimonial</li><li>Cocina</li><li>Comedor</li></ul>
+              <button class="stay-book" type="button" data-stay="tongariki">Consultar Tongariki <span aria-hidden="true">↗</span></button>
+            </div>
+          </article>
+
+          <article class="stay-card stay-card-hostel" data-kind="hostal" data-capacity="1">
+            <div class="hostel-visual"><span>Habitación</span><strong>Individual</strong><small>Aorangi Hare · Rapa Nui</small></div>
+            <div class="stay-content">
+              <div class="stay-card-top"><p class="card-number">06 · Hostal</p><p class="stay-price"><strong>$50.000</strong><span>por noche</span></p></div>
+              <h3>Habitación individual</h3><p>Una alternativa práctica para quienes viajan solos y buscan una estadía sencilla en Hanga Roa.</p>
+              <div class="stay-facts"><span>1 huésped</span><span>Habitación privada</span></div>
+              <button class="stay-book" type="button" data-stay="hostal-individual">Consultar habitación <span aria-hidden="true">↗</span></button>
+            </div>
+          </article>
+
+          <article class="stay-card stay-card-hostel" data-kind="hostal" data-capacity="2">
+            <div class="hostel-visual hostel-visual-double"><span>Habitación</span><strong>Matrimonial</strong><small>Aorangi Hare · Rapa Nui</small></div>
+            <div class="stay-content">
+              <div class="stay-card-top"><p class="card-number">07 · Hostal</p><p class="stay-price"><strong>$70.000</strong><span>por noche</span></p></div>
+              <h3>Habitación matrimonial</h3><p>Una opción acogedora para dos personas que prefieren la comodidad de una habitación privada.</p>
+              <div class="stay-facts"><span>Hasta 2 huéspedes</span><span>Cama matrimonial</span></div>
+              <button class="stay-book" type="button" data-stay="hostal-matrimonial">Consultar habitación <span aria-hidden="true">↗</span></button>
             </div>
           </article>
         </div>
@@ -145,14 +219,23 @@
       <div class="container booking-shell">
         <div class="booking-intro">
           <p class="eyebrow light">Tu estadía en la isla</p>
-          <h2 id="booking-title">Busca tu cabaña en Rapa Nui</h2>
-          <p>Elige tus fechas y cuéntanos quiénes viajan. Esta versión es una demostración visual y todavía no consulta disponibilidad real.</p>
+          <h2 id="booking-title">Prepara tu consulta de estadía</h2>
+          <p>Selecciona un alojamiento, tus fechas y cuántas personas viajan. Revisaremos que la capacidad sea adecuada antes de preparar la consulta.</p>
         </div>
 
         <form class="booking-search" id="booking-form">
           <label class="booking-field booking-destination">
-            <span>Destino</span>
-            <input id="booking-destination" name="destination" type="text" value="Hanga Roa, Rapa Nui" autocomplete="off" required>
+            <span>Alojamiento</span>
+            <select id="booking-accommodation" name="accommodation" required>
+              <option value="">Selecciona una alternativa</option>
+              <option value="make-make" data-capacity="4" data-price="$140.000">Cabaña Make Make</option>
+              <option value="rei-miro" data-capacity="4" data-price="$150.000">Cabaña Rei Miro</option>
+              <option value="tangata-manu" data-capacity="5" data-price="$120.000">Cabaña Tangata Manu</option>
+              <option value="manu-piri" data-capacity="5" data-price="$120.000">Cabaña Manu Piri</option>
+              <option value="tongariki" data-capacity="2" data-price="$100.000">Cabaña Tongariki</option>
+              <option value="hostal-individual" data-capacity="1" data-price="$50.000">Hostal · Habitación individual</option>
+              <option value="hostal-matrimonial" data-capacity="2" data-price="$70.000">Hostal · Habitación matrimonial</option>
+            </select>
           </label>
           <label class="booking-field">
             <span>Entrada</span>
@@ -163,31 +246,26 @@
             <input id="check-out" name="checkOut" type="date" required>
           </label>
           <div class="booking-field occupancy-field">
-            <span>Huéspedes y habitaciones</span>
+            <span>Huéspedes y alojamientos</span>
             <button class="occupancy-toggle" id="occupancy-toggle" type="button" aria-expanded="false" aria-controls="occupancy-panel">
-              <span id="occupancy-summary">2 adultos · 0 niños · 1 habitación</span><span aria-hidden="true">⌄</span>
+              <span id="occupancy-summary">2 adultos · 0 niños · 1 alojamiento</span><span aria-hidden="true">⌄</span>
             </button>
             <div class="occupancy-panel" id="occupancy-panel" hidden>
               <div class="occupancy-row"><span><strong>Adultos</strong><small>18 años o más</small></span><div class="counter"><button type="button" data-counter="adults" data-step="-1" aria-label="Quitar un adulto">−</button><output id="adults-count">2</output><button type="button" data-counter="adults" data-step="1" aria-label="Agregar un adulto">+</button></div></div>
               <div class="occupancy-row"><span><strong>Niños</strong><small>0 a 17 años</small></span><div class="counter"><button type="button" data-counter="children" data-step="-1" aria-label="Quitar un niño">−</button><output id="children-count">0</output><button type="button" data-counter="children" data-step="1" aria-label="Agregar un niño">+</button></div></div>
-              <div class="occupancy-row"><span><strong>Habitaciones</strong></span><div class="counter"><button type="button" data-counter="rooms" data-step="-1" aria-label="Quitar una habitación">−</button><output id="rooms-count">1</output><button type="button" data-counter="rooms" data-step="1" aria-label="Agregar una habitación">+</button></div></div>
+              <div class="occupancy-row"><span><strong>Alojamientos</strong></span><div class="counter"><button type="button" data-counter="rooms" data-step="-1" aria-label="Quitar un alojamiento">−</button><output id="rooms-count">1</output><button type="button" data-counter="rooms" data-step="1" aria-label="Agregar un alojamiento">+</button></div></div>
               <button class="occupancy-done" type="button" id="occupancy-done">Listo</button>
             </div>
           </div>
           <button class="booking-submit" type="submit">Buscar</button>
         </form>
-        <p class="booking-hint">Sin cobros ni envío de datos durante esta etapa.</p>
+        <p class="booking-hint">Las tarifas son referenciales y la reserva se confirma directamente con Aorangi Hare. No se realizan cobros en este formulario.</p>
         <div class="booking-result" id="booking-result" role="status" aria-live="polite" hidden></div>
 
-        <div class="booking-preview" aria-label="Cabañas de muestra">
-          <article class="booking-card">
-            <div class="booking-card-image booking-image-couple" role="img" aria-label="Cabaña con dormitorio matrimonial"></div>
-            <div><span class="booking-card-type">Cabaña matrimonial · Hanga Roa</span><h3>Descanso Aorangi</h3><p>Cama matrimonial · Baño privado · Ropa de cama</p><strong>Precio por consultar</strong><button type="button" data-stay="Descanso Aorangi">Ver disponibilidad</button></div>
-          </article>
-          <article class="booking-card">
-            <div class="booking-card-image booking-image-kitchen" role="img" aria-label="Cabaña con cocina equipada"></div>
-            <div><span class="booking-card-type">Cabaña equipada · Rapa Nui</span><h3>Comodidad en la isla</h3><p>Cocina equipada · Comedor · Luz natural</p><strong>Precio por consultar</strong><button type="button" data-stay="Comodidad en la isla">Ver disponibilidad</button></div>
-          </article>
+        <div class="booking-assurances" aria-label="Información de la consulta">
+          <div><span>01</span><strong>Tarifa visible</strong><p>Conoce el valor referencial antes de consultar.</p></div>
+          <div><span>02</span><strong>Capacidad validada</strong><p>El formulario comprueba que el alojamiento sea adecuado.</p></div>
+          <div><span>03</span><strong>Confirmación directa</strong><p>Fechas, condiciones y pago se coordinan con Aorangi Hare.</p></div>
         </div>
       </div>
     </section>
@@ -235,8 +313,8 @@
 
   <footer>
     <div class="container footer-grid">
-      <div class="footer-brand"><a class="brand" href="#inicio"><span class="brand-mark" aria-hidden="true">AH</span><span>Aorangi Hare <em>Rapa Nui</em></span></a><p>Una guía para descubrir la isla con curiosidad, calma y respeto.</p></div>
-      <div><h2>Explora</h2><a href="#alojamiento">Cabañas</a><a href="#experiencias">Experiencias</a><a href="#cultura">Cultura</a></div>
+      <div class="footer-brand"><a class="brand" href="#inicio"><span class="brand-mark" aria-hidden="true">AH</span><span>Aorangi Hare <em>Rapa Nui</em></span></a><p>Cabañas y habitaciones para descansar en Hanga Roa y descubrir la isla con calma y respeto.</p></div>
+      <div><h2>Explora</h2><a href="#alojamiento">Alojamientos</a><a href="#experiencias">Experiencias</a><a href="#cultura">Cultura</a></div>
       <div><h2>Reserva</h2><a href="#reserva">Buscar alojamiento</a><a href="#faq-title">Preguntas frecuentes</a><a href="#contacto">Contacto</a></div>
       <div class="footer-note"><p>Hecho para mirar la isla de otra manera.</p><span>Rapa Nui · Chile</span></div>
     </div>

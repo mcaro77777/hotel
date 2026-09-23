@@ -20,3 +20,53 @@
 @media(max-width:540px){.stay-catalog{grid-template-columns:1fr}.stay-gallery,.hostel-visual{height:265px}.stay-content{padding:24px}.stay-content>p{font-size:.87rem}.stay-filter{padding:10px 15px}.booking-panel{padding:23px 18px}.form-row{gap:10px}#booking-form input{padding-inline:8px;font-size:1rem}.catalog-meta{flex-direction:column;gap:5px}.hero h1{font-size:clamp(3.2rem,12vw,4rem)}.hero .button{width:100%;padding-inline:15px;gap:15px}.hero-copy{max-width:33ch}.hero{min-height:620px}.island-photo img{height:390px}.photo-top h2{font-size:.88rem}.photo-top{gap:12px}.photo-bottom p{font-size:.7rem}#photo-dialog{padding:14px}.footer-main>.text-link{margin-left:auto}}
 @media(max-width:350px){.container{width:calc(100% - 28px)}.stay-filter{padding-inline:11px}.intro-strip .container{gap:8px}.booking-panel{padding-inline:14px}.form-row{grid-template-columns:1fr}.hero h1{font-size:3rem}.mobile-action{padding-inline:14px;gap:12px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+
+/* Portada: adapta la composición a la altura disponible, incluido el zoom. */
+:root { --header-height: 76px; }
+html { scroll-padding-top: calc(var(--header-height) + 16px); }
+.nav-shell { height: var(--header-height); width: min(1280px, calc(100% - 64px)); }
+.site-header .brand img { width: 70px; height: 60px; }
+.hero {
+  min-height: min(720px, calc(100svh - var(--header-height)));
+  background-position: center 78%;
+}
+.hero::before {
+  background: linear-gradient(90deg, rgba(12,30,27,.86), rgba(12,30,27,.53) 40%, rgba(12,30,27,.08) 78%),
+    linear-gradient(0deg, rgba(12,30,27,.32), transparent 45%);
+}
+.hero-content { padding-block: clamp(28px, 5svh, 56px); }
+.hero .eyebrow { margin-bottom: 18px; }
+.hero h1 { max-width: 13ch; font-size: clamp(2.75rem, min(5.4vw, 10svh), 5rem); line-height: 1.02; }
+.hero-tagline { margin: 16px 0 0; color: #f2d7b7; font: italic clamp(1.2rem, 2vw, 1.65rem)/1.3 var(--serif); }
+.hero-copy { max-width: 43ch; margin: 18px 0 24px; font-size: .96rem; line-height: 1.6; }
+.hero-actions { flex-direction: row; align-items: stretch; flex-wrap: wrap; gap: 12px; }
+.hero-actions .button { min-height: 48px; padding: 12px 21px; }
+.hero .button-outline { border-color: #fffefa9c; background: #102b263d; color: var(--white); }
+.hero .button-outline:hover { background: #fffefa; color: var(--forest); border-color: var(--white); }
+.hero-guest-link { margin-top: 14px; padding-block: 8px; }
+.hero-caption { bottom: 26px; }
+@media (max-width: 980px) { .hero-caption { display: none; } }
+@media (max-width: 760px) {
+  :root { --header-height: 68px; }
+  .nav-shell { width: calc(100% - 32px); }
+  .site-header .brand img { width: 62px; height: 54px; }
+  .main-nav { top: var(--header-height); }
+  .hero { min-height: min(660px, calc(100svh - var(--header-height) - 66px - env(safe-area-inset-bottom))); background-position: 62% 78%; }
+  .hero::before { background: linear-gradient(90deg, #0c201bdf, #0c201b91 60%, #0c201b50), linear-gradient(0deg, #0c201b55, transparent 55%); }
+  .hero-content { padding-block: clamp(26px, 4svh, 40px); }
+  .hero h1 { font-size: clamp(2.65rem, min(10.5vw, 9svh), 4rem); }
+  .hero .eyebrow { font-size: .61rem; letter-spacing: .09em; margin-bottom: 16px; }
+  .hero-tagline { margin-top: 14px; font-size: 1.2rem; }
+  .hero-copy { max-width: 40ch; font-size: .88rem; margin: 16px 0 20px; }
+  .hero-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 420px; gap: 10px; }
+  .hero-actions .button { width: 100%; min-height: 48px; padding: 11px 10px; font-size: .78rem; gap: 8px; }
+  .hero-actions .button span { display: none; }
+  .hero-guest-link { font-size: .73rem; margin-top: 12px; }
+}
+@media (max-height: 620px) and (min-width: 761px) {
+  .hero-content { padding-block: 24px; }
+  .hero .eyebrow { margin-bottom: 12px; }
+  .hero-tagline { margin-top: 12px; }
+  .hero-copy { margin: 14px 0 18px; }
+  .hero-guest-link { margin-top: 10px; }
+}

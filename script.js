@@ -31,7 +31,7 @@
     menuButton.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú'); document.body.classList.toggle('menu-open', open);
   });
   all('.main-nav a').forEach((link) => link.addEventListener('click', closeMenu));
-  window.matchMedia('(min-width: 761px)').addEventListener('change', closeMenu);
+  window.matchMedia('(min-width: 981px)').addEventListener('change', closeMenu);
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && menu.classList.contains('open')) { closeMenu(); menuButton.focus(); }
   });

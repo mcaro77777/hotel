@@ -22,10 +22,16 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
 
 /* Portada: adapta la composición a la altura disponible, incluido el zoom. */
-:root { --header-height: 76px; }
+:root { --header-height: 80px; }
 html { scroll-padding-top: calc(var(--header-height) + 16px); }
 .nav-shell { height: var(--header-height); width: min(1280px, calc(100% - 64px)); }
-.site-header .brand img { width: 70px; height: 60px; }
+.site-header .brand img { width: 84px; height: 72px; }
+.brand-signature { align-items: center; gap: 12px; }
+.brand-wordmark { display: flex; flex-direction: column; gap: 6px; }
+.brand-name { font: 500 1.7rem/1.05 var(--serif); letter-spacing: -.035em; }
+.brand-descriptor { font-size: .59rem; font-weight: 650; line-height: 1.3; letter-spacing: .17em; text-transform: uppercase; color: var(--muted); }
+.nav-shell { gap: 24px; }
+.hero h1.hero-brand-title { max-width: none; letter-spacing: -.04em; }
 .hero {
   min-height: min(720px, calc(100svh - var(--header-height)));
   background-position: center 78%;
@@ -45,11 +51,25 @@ html { scroll-padding-top: calc(var(--header-height) + 16px); }
 .hero .button-outline:hover { background: #fffefa; color: var(--forest); border-color: var(--white); }
 .hero-guest-link { margin-top: 14px; padding-block: 8px; }
 .hero-caption { bottom: 26px; }
-@media (max-width: 980px) { .hero-caption { display: none; } }
+@media (max-width: 1100px) { .main-nav { gap: 20px; } }
+@media (max-width: 980px) {
+  .hero-caption { display: none; }
+  .menu-toggle { display: block; flex-shrink: 0; }
+  .main-nav { display: none; position: absolute; top: var(--header-height); left: 0; right: 0; padding: 20px; background: var(--paper); border-bottom: 1px solid var(--line); box-shadow: 0 20px 30px #183c3620; max-height: calc(100dvh - var(--header-height) - 80px); overflow-y: auto; }
+  .main-nav.open { display: flex; flex-direction: column; align-items: stretch; gap: 7px; }
+  .main-nav > a:not(.button) { font-size: .95rem; padding: 12px 4px; }
+  .main-nav .button { margin-top: 9px; }
+  .menu-toggle[aria-expanded='true'] span:first-child { transform: translateY(4px) rotate(45deg); }
+  .menu-toggle[aria-expanded='true'] span:last-child { transform: translateY(-4px) rotate(-45deg); }
+}
 @media (max-width: 760px) {
-  :root { --header-height: 68px; }
-  .nav-shell { width: calc(100% - 32px); }
-  .site-header .brand img { width: 62px; height: 54px; }
+  :root { --header-height: 72px; }
+  .nav-shell { width: calc(100% - 32px); gap: 12px; }
+  .site-header .brand img { width: 64px; height: 56px; }
+  .brand-signature { gap: 9px; }
+  .brand-name { font-size: clamp(1.2rem, 5.4vw, 1.5rem); }
+  .brand-descriptor { font-size: .5rem; letter-spacing: .12em; }
+  .brand-wordmark { gap: 5px; }
   .main-nav { top: var(--header-height); }
   .hero { min-height: min(660px, calc(100svh - var(--header-height) - 66px - env(safe-area-inset-bottom))); background-position: 62% 78%; }
   .hero::before { background: linear-gradient(90deg, #0c201bdf, #0c201b91 60%, #0c201b50), linear-gradient(0deg, #0c201b55, transparent 55%); }
